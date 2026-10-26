@@ -8,18 +8,17 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
-
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
 
-html, body {
-    width: 100%;
-    overflow-x: hidden; 
-    position: relative;
-}
+        html, body {
+            width: 100%;
+            overflow-x: hidden; 
+            position: relative;
+        }
 
         :root {
             --bg: #050505;
@@ -32,9 +31,8 @@ html, body {
         }
 
         html { scroll-behavior: smooth; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
+        body {  
             background: var(--bg);
             color: var(--text);
             font-family: 'Space Grotesk', sans-serif;
@@ -51,7 +49,6 @@ html, body {
             mask-image: radial-gradient(circle at 50% 50%, black, transparent 90%);
         }
 
-        
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -62,21 +59,22 @@ html, body {
             opacity: 1;
             transform: translateY(0);
         }
-        .nav-brand {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 1.2rem;
-    text-decoration: none; 
-    transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
-    display: inline-block;
-}
 
-.nav-brand:hover {
-    text-shadow: 0 0 10px var(--accent);
-    transform: scale(1.05);
-    color: #fff; 
-}
+        .nav-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.2rem;
+            text-decoration: none; 
+            transition: 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+            display: inline-block;
+        }
+
+        .nav-brand:hover {
+            text-shadow: 0 0 10px var(--accent);
+            transform: scale(1.05);
+            color: #fff; 
+        }
 
         nav {
             padding: 20px 5%;
@@ -91,15 +89,14 @@ html, body {
             border-bottom: 1px solid var(--border);
         }
 
-        .nav-brand { font-family: 'JetBrains Mono'; font-weight: 700; color: var(--accent); font-size: 1.2rem; }
         .nav-links a { margin-left: 25px; text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-       section {
-    padding: 80px 5% 40px; 
-    min-height: auto;
-}
-        
+        section {
+            padding: 80px 5% 40px; 
+            min-height: auto;
+        }
+
         .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 700; }
         .hero p { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
 
@@ -124,22 +121,21 @@ html, body {
 
         .section-title { font-size: 2rem; margin-bottom: 40px; border-left: 4px solid var(--accent); padding-left: 20px; text-transform: uppercase; letter-spacing: 2px;}
         
-     
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
 
-.card {
-    width: 100%;
-    max-width: 100%;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: 0.4s;
-}
+        .card {
+            width: 100%;
+            max-width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: 0.4s;
+        }
         .card:hover { border-color: var(--accent); transform: translateY(-10px); }
         
         .icon-box {
@@ -185,92 +181,85 @@ html, body {
         .copy-box:hover { background: var(--accent); color: #000; }
         .copy-box span { font-family: 'JetBrains Mono'; font-weight: 700; margin-right: 15px; }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack name above links */
-        padding: 10px;
-    }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
 
-    .nav-links {
-        display: flex; /* Bring them back! */
-        gap: 15px;
-        margin-top: 10px;
-    }
+            .nav-links {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+            }
 
-    .nav-links a {
-        margin: 0;
-        font-size: 11px; /* Smaller text for mobile */
-        letter-spacing: 1px;
-    }
+            .nav-links a {
+                margin: 0;
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
 
+            .project-grid {
+                grid-template-columns: 1fr; 
+            }
 
-    .project-grid {
-        grid-template-columns: 1fr; 
-    }
+            .modal-content {
+                width: 95%; 
+            }
 
-    .modal-content {
-        width: 95%; 
-    }
-}
-@media (max-width: 768px) {
-    .discord-card {
-        flex-direction: column; /* Stack icon, text, and buttons vertically */
-        gap: 15px;
-        padding: 20px;
-        width: 100%;
-    }
+            .discord-card {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+                width: 100%;
+            }
 
-    /* Make buttons full width on mobile so they are easy to tap with a thumb */
-    .discord-card div[style*="margin-left: auto"] {
-        margin-left: 0 !important;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .copy-btn, .discord-card a {
-        flex: 1;
-        text-align: center;
-        justify-content: center;
-    }
-}
+            .discord-card div[style*="margin-left: auto"] {
+                margin-left: 0 !important;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .copy-btn, .discord-card a {
+                flex: 1;
+                text-align: center; justify-content: center;
+            }
+        }
         
-#videoModal {
-    display: flex; 
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(15px);
-    
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        #videoModal {
+            display: flex; 
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-#videoModal.active {
-    opacity: 1;
-    pointer-events: auto;
-}
+        #videoModal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
+        #modalVideo {
+            width: 100%;
+            border: 1px solid var(--accent);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.2);
+            transform: scale(0.8) translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-#modalVideo {
-    width: 100%;
-    border: 1px solid var(--accent);
-    box-shadow: 0 0 50px rgba(0, 242, 255, 0.2);
-    
-    
-    transform: scale(0.8) translateY(20px);
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#videoModal.active #modalVideo {
-    transform: scale(1) translateY(0);
-}
+        #videoModal.active #modalVideo {
+            transform: scale(1) translateY(0);
+        }
     </style>
 </head>
 <body id="top">
@@ -286,7 +275,7 @@ html, body {
         </div>
     </nav>
 
-    <section class="reveal">
+    <section class="reveal hero">
         <p class="mono" style="color:var(--accent); margin-bottom: 10px; letter-spacing: 2px;">LEAD SCRIPTER & DEVELOPER</p>
         <h1>Building High-End<br>Roblox Experiences.</h1>
         <p>I specialize in creating full game systems, high-quality UI scripting, and advanced monetization to help your game succeed on the front page.</p>
@@ -303,89 +292,129 @@ html, body {
             </div>
             <div class="stat-item">
                 <h3>3 YEAR+</h3>
-                     <p>Experience</p>
+                <p>Experience</p>
             </div>
         </div>
     </section>
 
-<section id="projects" class="reveal">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-grid">
-        
-        <div class="card">
-            <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
-                <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <source src="Videos/spawnbutton.mp4" type="video/mp4">
-                </video>
+    <section id="projects" class="reveal">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            
+            <!-- Existing Project 1 -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/spawnbutton.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Spawn Button</h3>
+                    <p>"The project title displayed is "Spawn Button". A short description explains that it is a loading game assets animation created using HTML5. The code uses elements and CSS classes to organize the layout and styling of the card."</p>
+                </div>
             </div>
-            <div class="card-content">
-                <h3>Spawn Button</h3>
-                <p>"The project title displayed is "Spawn Button".
-A short description explains that it is a loading game assets animation created using HTML5.
-The code uses <div> elements and CSS classes to organize the layout and styling of the card."</p>
+
+            <!-- Existing Project 2 -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/loadinggameasstes.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Loading game assets</h3>
+                    <p>Custom loading screen animation showcasing assets loading seamlessly into the game session.</p>
+                </div>
             </div>
+
+            <!-- Existing Project 3 -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/robloxtycoonshopitems.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Game passes and shop items</h3>
+                    <p>"🏗️ TYCOON SHOP & GAME PASSES 💰<br><br>Take your tycoon to the next level! 🔥 Buy awesome Game Passes and useful Shop Items to build faster, earn more cash, and become the richest player! 👑"</p>
+                </div>
+            </div>
+
+            <!-- Existing Project 4 -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/Vehical_system.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Vehical system</h3>
+                    <p>A Vehicle System uses a VehicleSeat to turn player inputs into physical motion through Constraints (like hinges and springs) that simulate realistic driving and suspension.</p>
+                </div>
+            </div>
+
+            <!-- NEW PLACEHOLDER 1 (SLOT FOR NEW VIDEO 5) -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/YOUR_NEW_VIDEO_1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>New Project Title 1</h3>
+                    <p>Add a brief description of your new Roblox scripting system or feature here.</p>
+                </div>
+            </div>
+
+            <!-- NEW PLACEHOLDER 2 (SLOT FOR NEW VIDEO 6) -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/YOUR_NEW_VIDEO_2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>New Project Title 2</h3>
+                    <p>Add a brief description of your new Roblox scripting system or feature here.</p>
+                </div>
+            </div>
+
+            <!-- NEW PLACEHOLDER 3 (SLOT FOR NEW VIDEO 7) -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/YOUR_NEW_VIDEO_3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>New Project Title 3</h3>
+                    <p>Add a brief description of your new Roblox scripting system or feature here.</p>
+                </div>
+            </div>
+
+            <!-- NEW PLACEHOLDER 4 (SLOT FOR NEW VIDEO 8) -->
+            <div class="card">
+                <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
+                    <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
+                    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <source src="Videos/YOUR_NEW_VIDEO_4.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>New Project Title 4</h3>
+                    <p>Add a brief description of your new Roblox scripting system or feature here.</p>
+                </div>
+            </div>
+
         </div>
-
-        <div class="card">
-            <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
-                <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <source src="Videos/loadinggameasstes.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="card-content">
-                <h3>Loading game assets</h3>
-                <p>"This code implements a project card for a portfolio website that showcases a Loading Game Assets animation. It uses the HTML5 <video> element to embed the loadinggameassets.mp4 video with autoplay, muted, loop, and inline playback enabled for a smooth viewing experience. The content is structured using nested <div> elements with classes such as card, icon-box, and card-content to ensure a clean and organized layout. A project title and description section are included to provide information about the animation. This design creates an interactive, responsive, and visually appealing way to present the project on the webpage."</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
-                <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <source src="Videos/robloxtycoonshopitems.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="card-content">
-                <h3>Game passes and shop items</h3>
-                <p>"🏗️ TYCOON SHOP & GAME PASSES 💰
-
-Take your tycoon to the next level! 🔥 Buy awesome Game Passes and useful Shop Items to build faster, earn more cash, and become the richest player! 👑
-
-💎 Game Passes
-⚡ Exclusive perks & powerful boosts
-💰 Earn more money
-🚀 Progress faster
-👑 Unlock special features
-
-🛒 Shop Items
-🔥 Helpful upgrades
-💵 Cash & money boosts
-⚡ Speed up your tycoon
-✨ Exclusive items & rewards
-
-Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! 🏆💰
-
-⭐ Thanks for supporting the game!⭐."</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
-                <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
-                <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
-                    <source src="Videos/Vehical_system.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="card-content">
-                <h3>Vehical system</h3>
-                <p>A Vehicle System uses a VehicleSeat to turn player inputs into physical motion through Constraints (like hinges and springs) that simulate realistic driving and suspension.</p>
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <section id="reviews" class="reveal">
         <h2 class="section-title">Client Feedback</h2>
@@ -401,7 +430,7 @@ Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! �
         </div>
     </section>
 
-<section id="contact" class="contact-section reveal">
+    <section id="contact" class="contact-section reveal">
         <h2 style="font-size: 3.5rem; text-transform: uppercase;">Let's Work</h2>
         <p>Ready to bring your game idea to life? Connect with me directly.</p>
         
@@ -413,9 +442,9 @@ Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! �
                     <i data-lucide="message-square" style="color: var(--accent);"></i>
                 </div>
 
-                <div style="text-align: left;">
-                    <span style="display: block; font-size: 10px; color: var(--accent); letter-spacing: 2px; font-weight: bold;">DISCORD_ID</span>
-                    <span id="discord-tag" style="font-family: 'JetBrains Mono'; font-size: 1.2rem; font-weight: 700;">ismail.2007</span>
+                <div>
+                    <span style="font-size: 0.8rem; color: var(--text-dim); display: block; text-align: left;">DISCORD</span>
+                    <span id="discord-tag" style="font-family: 'JetBrains Mono'; font-weight: 700; color: #fff;">ismail.2007</span>
                 </div>
 
                 <div style="margin-left: auto; display: flex; gap: 10px;">
@@ -430,18 +459,21 @@ Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! �
 
         </div>
 
-        <p style="margin-top: 80px; font-size: 11px; opacity: 0.4; letter-spacing: 3px;" class="mono">© 2026  ismail.2007| ALL RIGHTS RESERVED</p>
+        <p style="margin-top: 80px; font-size: 11px; opacity: 0.4; letter-spacing: 3px;" class="mono">© 2026 ismail.2007| ALL RIGHTS RESERVED</p>
     </section>
-   <div id="videoModal" onclick="closeModal()">
-    <div style="position:relative; width:90%; max-width:1000px;">
-        <span style="position:absolute; top:-40px; right:0; color:white; font-size:14px; cursor:pointer; font-family: 'JetBrains Mono'; letter-spacing:2px;">[ CLOSE_OVERLAY ]</span>
-        <video id="modalVideo" controls playsinline loop>
-            <source src="" type="video/mp4">
-        </video>
+
+    <div id="videoModal" onclick="closeModal()">
+        <div style="position:relative; width:90%; max-width:1000px;">
+            <span style="position:absolute; top:-40px; right:0; color:white; font-size:14px; cursor:pointer; font-family: 'JetBrains Mono'; letter-spacing:2px;">[ CLOSE_OVERLAY ]</span>
+            <video id="modalVideo" controls playsinline loop>
+                <source src="" type="video/mp4">
+            </video>
+        </div>
     </div>
-</div>
+
     <script>
         lucide.createIcons();
+
         const observerOptions = { threshold: 0.2 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -450,7 +482,9 @@ Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! �
                 }
             });
         }, observerOptions);
+
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
         function copyDiscord() {
             const id = "ismail.2007";
             navigator.clipboard.writeText(id);
@@ -462,48 +496,29 @@ Build your empire, upgrade your tycoon, and become the ultimate tycoon boss! �
                 span.innerText = original;
             }, 2000);
         }
-        function openModal(videoElement) {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    
-    
-    modalVideo.src = videoElement.querySelector('source').src;
-    
-    modal.style.display = 'flex';
-    modalVideo.play();
-}
 
-function openModal(cardIconBox) {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const sourcePath = cardIconBox.querySelector('video source').src;
-    
-    
-    modalVideo.src = sourcePath;
-    modalVideo.load();
-    
-    
-    modal.classList.add('active');
-    
-    modalVideo.play();
-}
+        function openModal(cardIconBox) {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const sourcePath = cardIconBox.querySelector('video source').src;
+            
+            modalVideo.src = sourcePath;
+            modalVideo.load();
+            modal.classList.add('active');
+            modalVideo.play();
+        }
 
-function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    
-    
-    modal.classList.remove('active');
-    
-
-    setTimeout(() => {
-        modalVideo.pause();
-        modalVideo.src = "";
-    }, 500); 
-}
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            
+            modal.classList.remove('active');
+            
+            setTimeout(() => {
+                modalVideo.pause();
+                modalVideo.src = "";
+            }, 500); 
+        }
     </script>
 </body>
-
 </html>
-
-
