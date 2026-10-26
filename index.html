@@ -28,6 +28,7 @@
             --text-dim: #a0a0a0;
             --card-bg: rgba(20, 20, 20, 0.6);
             --border: rgba(255, 255, 255, 0.08);
+            --star-gold: #ffcc00;
         }
 
         html { scroll-behavior: smooth; }
@@ -93,7 +94,7 @@
         .nav-links a:hover { color: var(--accent); }
 
         section {
-            padding: 80px 5% 40px; 
+            padding: 100px 5% 40px; 
             min-height: auto;
         }
 
@@ -136,7 +137,7 @@
             border-radius: 12px;
             transition: 0.4s;
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1); }
         
         .icon-box {
             width: 100%;
@@ -152,34 +153,112 @@
         .card-content h3 { margin-bottom: 10px; font-size: 1.4rem; color: var(--accent); }
         .card-content p { color: var(--text-dim); font-size: 0.95rem; }
 
+        /* SERVICES SECTION */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* WORK PROCESS SECTION */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .process-step {
+            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .process-number {
+            font-family: 'JetBrains Mono';
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.3;
+            margin-bottom: 10px;
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .process-step p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* REVIEWS GRID */
         .review-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+
         .review-card {
             padding: 30px;
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-        .review-card p { font-style: italic; margin-bottom: 20px; color: var(--text-dim); }
-        .review-card .name { font-weight: 700; color: var(--accent); font-size: 0.8rem; text-transform: uppercase; }
-
-        .contact-section { text-align: center; padding: 150px 10%; }
-        .copy-box {
-            display: inline-flex;
-            align-items: center;
-            background: #111;
-            padding: 15px 30px;
-            border: 1px solid var(--accent);
-            cursor: pointer;
-            margin-top: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: 0.3s;
         }
-        .copy-box:hover { background: var(--accent); color: #000; }
-        .copy-box span { font-family: 'JetBrains Mono'; font-weight: 700; margin-right: 15px; }
+
+        .review-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: var(--star-gold);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .review-card p { font-style: italic; margin-bottom: 20px; color: var(--text-dim); font-size: 0.95rem; }
+        .review-card .author-info { display: flex; align-items: center; gap: 12px; }
+        .review-card .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--accent); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 700; }
+        .review-card .name { font-weight: 700; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; }
+        .review-card .role { font-size: 0.75rem; color: var(--text-dim); }
+
+        .contact-section { text-align: center; padding: 120px 10%; }
 
         @media (max-width: 768px) {
             nav {
@@ -201,10 +280,6 @@
 
             .project-grid {
                 grid-template-columns: 1fr; 
-            }
-
-            .modal-content {
-                width: 95%; 
             }
 
             .discord-card {
@@ -238,7 +313,6 @@
             justify-content: center;
             align-items: center;
             backdrop-filter: blur(15px);
-            
             opacity: 0;
             pointer-events: none;
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -270,11 +344,14 @@
         <a href="#top" class="nav-brand">ismail.2007</a>
         <div class="nav-links">
             <a href="#projects">PROJECTS</a>
+            <a href="#services">SERVICES</a>
+            <a href="#process">PROCESS</a>
             <a href="#reviews">TESTIMONIALS</a>
             <a href="#contact">CONTACT</a>
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="reveal hero">
         <p class="mono" style="color:var(--accent); margin-bottom: 10px; letter-spacing: 2px;">LEAD SCRIPTER & DEVELOPER</p>
         <h1>Building High-End<br>Roblox Experiences.</h1>
@@ -284,7 +361,7 @@
         <div class="stats">
             <div class="stat-item">
                 <h3>50+</h3>
-                <p>Projects</p>
+                <p>Projects Completed</p>
             </div>
             <div class="stat-item">
                 <h3>FAST</h3>
@@ -294,11 +371,16 @@
                 <h3>3 YEAR+</h3>
                 <p>Experience</p>
             </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
         </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="reveal">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">Showcase Projects</h2>
         <div class="project-grid">
             
             <!-- Existing Project 1 -->
@@ -357,7 +439,7 @@
                 </div>
             </div>
 
-            <!-- NEW PLACEHOLDER 1 (SLOT FOR NEW VIDEO 5) -->
+            <!-- NEW PLACEHOLDER 1 -->
             <div class="card">
                 <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
                     <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
@@ -371,7 +453,7 @@
                 </div>
             </div>
 
-            <!-- NEW PLACEHOLDER 2 (SLOT FOR NEW VIDEO 6) -->
+            <!-- NEW PLACEHOLDER 2 -->
             <div class="card">
                 <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
                     <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
@@ -385,7 +467,7 @@
                 </div>
             </div>
 
-            <!-- NEW PLACEHOLDER 3 (SLOT FOR NEW VIDEO 7) -->
+            <!-- NEW PLACEHOLDER 3 -->
             <div class="card">
                 <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
                     <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
@@ -399,7 +481,7 @@
                 </div>
             </div>
 
-            <!-- NEW PLACEHOLDER 4 (SLOT FOR NEW VIDEO 8) -->
+            <!-- NEW PLACEHOLDER 4 -->
             <div class="card">
                 <div class="icon-box" style="padding: 0; overflow: hidden; cursor: pointer; position: relative;" onclick="openModal(this)">
                     <div style="position:absolute; top:10px; right:10px; z-index:10; background:rgba(0,0,0,0.6); padding:5px; border-radius:4px; font-size:10px; color:var(--accent);">CLICK TO ENLARGE</div>
@@ -416,27 +498,137 @@
         </div>
     </section>
 
-    <section id="reviews" class="reveal">
-        <h2 class="section-title">Client Feedback</h2>
-        <div class="review-grid">
-            <div class="review-card">
-                <p>"Best scripter I've hired. He understood exactly what I wanted for my game and delivered it perfectly."</p>
-                <div class="name">Studio Owner</div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="reveal">
+        <h2 class="section-title">Services & Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3><i data-lucide="code"></i> Full Game Systems</h3>
+                <p>Complete backend logic, custom DataStores, save systems, inventory management, and combat mechanics built for high performance.</p>
             </div>
-            <div class="review-card">
-                <p>"His UI scripting is on another level. The game feels so much more professional now. Definitely hiring again."</p>
-                <div class="name">Game Producer</div>
+            <div class="service-card">
+                <h3><i data-lucide="layout"></i> Advanced UI Scripting</h3>
+                <p>Smooth UI animations, shop interfaces, interactive menus, HUDs, and TweenService effects designed to engage players.</p>
+            </div>
+            <div class="service-card">
+                <h3><i data-lucide="coins"></i> Monetization & Store UI</h3>
+                <p>Game pass integrations, developer products, battle passes, multiplier boosts, and custom Robux shop flows.</p>
+            </div>
+            <div class="service-card">
+                <h3><i data-lucide="zap"></i> Optimization & Anti-Cheat</h3>
+                <p>Lag-free memory optimization, client-server security checks, exploit prevention, and modular Luau code architecture.</p>
             </div>
         </div>
     </section>
 
+    <!-- WORK PROCESS SECTION -->
+    <section id="process" class="reveal">
+        <h2 class="section-title">How We Work</h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <h3>Discussion & Quote</h3>
+                <p>Send me your game details and features on Discord. I review your requirements and provide a fair quote and timeframe.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <h3>Development & Updates</h3>
+                <p>I build your system with regular video updates and progress reports so you can test and give feedback in real-time.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <h3>Delivery & Support</h3>
+                <p>I deliver clean, organized Luau scripts, help you set them up in your Roblox place, and provide post-delivery bug fixes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="reviews" class="reveal">
+        <h2 class="section-title">Client Feedback</h2>
+        <div class="review-grid">
+            
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Best scripter I've hired. He understood exactly what I wanted for my game and delivered it perfectly. Clean code and fast delivery."</p>
+                </div>
+                <div class="author-info">
+                    <div class="avatar">SO</div>
+                    <div>
+                        <div class="name">Studio Owner</div>
+                        <div class="role">10M+ Visits Simulator</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"His UI scripting is on another level. The game feels so much more professional now. Definitely hiring again for our next update."</p>
+                </div>
+                <div class="author-info">
+                    <div class="avatar">GP</div>
+                    <div>
+                        <div class="name">Game Producer</div>
+                        <div class="role">Front Page Tycoon Lead</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Super fast worker and great communication on Discord. Fixed all our physics and vehicle bugs in less than 24 hours!"</p>
+                </div>
+                <div class="author-info">
+                    <div class="avatar">RD</div>
+                    <div>
+                        <div class="name">Lead Developer</div>
+                        <div class="role">RPG Game Studio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Extremely reliable developer. Created a custom DataStore and shop system that handled thousands of concurrent players smoothly."</p>
+                </div>
+                <div class="author-info">
+                    <div class="avatar">CM</div>
+                    <div>
+                        <div class="name">Community Manager</div>
+                        <div class="role">Anime Game Community</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p>"Outstanding work quality! He provided video updates throughout the project and made every requested change without hesitation."</p>
+                </div>
+                <div class="author-info">
+                    <div class="avatar">GM</div>
+                    <div>
+                        <div class="name">Game Owner</div>
+                        <div class="role">FPS Action Experience</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
     <section id="contact" class="contact-section reveal">
         <h2 style="font-size: 3.5rem; text-transform: uppercase;">Let's Work</h2>
-        <p>Ready to bring your game idea to life? Connect with me directly.</p>
+        <p>Ready to bring your game idea to life? Connect with me directly on Discord.</p>
         
         <div class="contact-container" style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 40px;">
             
-            <div class="discord-card" style="background: #111; border: 1px solid var(--accent); padding: 25px; border-radius: 15px; display: flex; align-items: center; gap: 20px; width: 100%; max-width: 400px; position: relative; overflow: hidden;">
+            <div class="discord-card" style="background: #111; border: 1px solid var(--accent); padding: 25px; border-radius: 15px; display: flex; align-items: center; gap: 20px; width: 100%; max-width: 400px; position: relative; overflow: hidden; box-shadow: 0 0 20px var(--accent-dim);">
                 
                 <div class="icon-circle" style="background: var(--accent-dim); padding: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--accent); box-shadow: 0 0 15px var(--accent-dim);">
                     <i data-lucide="message-square" style="color: var(--accent);"></i>
@@ -459,9 +651,10 @@
 
         </div>
 
-        <p style="margin-top: 80px; font-size: 11px; opacity: 0.4; letter-spacing: 3px;" class="mono">© 2026 ismail.2007| ALL RIGHTS RESERVED</p>
+        <p style="margin-top: 80px; font-size: 11px; opacity: 0.4; letter-spacing: 3px;" class="mono">© 2026 ismail.2007 | ALL RIGHTS RESERVED</p>
     </section>
 
+    <!-- VIDEO MODAL -->
     <div id="videoModal" onclick="closeModal()">
         <div style="position:relative; width:90%; max-width:1000px;">
             <span style="position:absolute; top:-40px; right:0; color:white; font-size:14px; cursor:pointer; font-family: 'JetBrains Mono'; letter-spacing:2px;">[ CLOSE_OVERLAY ]</span>
@@ -474,7 +667,7 @@
     <script>
         lucide.createIcons();
 
-        const observerOptions = { threshold: 0.2 };
+        const observerOptions = { threshold: 0.15 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
